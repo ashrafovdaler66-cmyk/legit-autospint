@@ -1,0 +1,10 @@
+modLoader="javafml"
+loaderVersion="[21,)"
+license="MIT"
+
+[[mods]]
+modId="autosprint"
+version="1.0.0"
+displayName="Legit Auto Sprint"
+authors="Developer"
+description="Smart anti-cheat bypass auto sprint for NeoForge"
