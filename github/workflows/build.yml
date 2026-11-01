@@ -1,0 +1,22 @@
+name: Build Mod
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Build Mod with Gradle
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LegitAutoSprint-NeoForge-1.21.4
+          path: build/libs/*.jar
